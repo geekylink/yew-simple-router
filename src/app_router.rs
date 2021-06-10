@@ -39,8 +39,6 @@ impl Component for AppRouter {
             AppRoute::Index => html! { <pages::Index/> },
             AppRoute::About => html! { <pages::About/> },
             AppRoute::Post(id) => html! { <pages::Post id={id}/> },
-            _ => html! { "Not found!" },
-            // AppRoute::Order(id) => html! { <pages::Order id={id}/> },
         });
 
         html! {
@@ -49,21 +47,6 @@ impl Component for AppRouter {
     }
 
 }
-
-/*fn switch(routes: &AppRoute) -> Html {
-        html! {
-            <h1>
-            <Router<AppRoute, ()>
-                render = Router::render(|switch: AppRoute| {
-                match switch {
-                    AppRoute::About => html!{"About"},
-                    AppRoute::Index => html!{"Home"},
-                }
-            })
-            />
-            </h1>
-        }
-}*/
 
 fn main() {
     yew::start_app::<AppRouter>();
